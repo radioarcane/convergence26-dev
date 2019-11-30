@@ -2,19 +2,49 @@
 
 {% extends '_layouts/default.njk' %}
 
-
 {% block main %}
+   <div class="block">
+      <section class="container">
+         <h1 class="title">Contact Us</h1>
 
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec sagittis orci. In eget metus sit amet ex elementum accumsan. Quisque eget libero sollicitudin, sollicitudin dui vitae, imperdiet metus. Proin malesuada sapien convallis auctor posuere. Donec arcu ipsum, porta a molestie quis, varius sed dui. Nunc eros libero, lacinia et facilisis at, dapibus non metus. Proin at mauris feugiat, auctor augue id, porta lorem. Ut id semper est.</p>
 
-   <div class="container">
-      <article class="block">
-         <h2 class="title">Contact Us</h2>
+         <form id="contact-form" name="contact" method="POST" data-netlify="true">
+            <noscript>
+               <p><strong>Sorry, but JavaScript is required to properly submit this form</strong></p>
+            </noscript>
 
+            <input type="hidden" name="form-name" value="contact" readonly />
+            <input type="hidden" name="subject" value="Convergence 26 Contact Form Submission" readonly />
 
-      </article>
+            <fieldset>
+               <div class="grid">
+                  <div class="grid__item xs-12 md-6">
+                     <label for="name">
+                        <span class="required-label">Name:</span>
+                        <input type="text" id="name" name="name" maxlength="200" aria-label="Your Name" required>
+                     </label>
+                  </div>
+                  <div class="grid__item xs-12 md-6">
+                     <label for="email">
+                        <span class="required-label">Email:</span>
+                        <input type="email" id="email" name="email" maxlength="200" aria-label="Email Address" required>
+                     </label>
+                  </div>
+                  <div class="grid__item xs-12">
+                     <label for="message">
+                        <span class="required-label">Message:</span>
+                        <textarea id="message" name="message" aria-label="Message" required></textarea>
+                     </label>
+                  </div>
+                  <div class="grid__item xs-12 text-center">
+                     <button type="submit" class="btn">
+                        Submit Form
+                     </button>
+                  </div>
+               </div>
+            </fieldset>
+         </form>
+      </section>
    </div>
-
-
-
-
 {% endblock %}
