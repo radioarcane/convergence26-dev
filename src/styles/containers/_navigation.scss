@@ -46,6 +46,8 @@
    font-size: 28px;
    padding: 0 8px 6px;
    transition: all 200ms ease-in-out;
+   background: transparent;
+   line-height: 1.5;
 
    &:hover,
    &:focus {
@@ -107,7 +109,7 @@
 }
 
 .mast-nav {
-   left: 2000px;
+   left: 3000px;
    width: 0;
    position: relative;
    transition: left 200ms ease-in-out;
@@ -190,11 +192,11 @@
    font-size: 45px;
    color: $white;
    position: absolute;
-   right: 0;
    z-index: 10;
    //transition: left 100ms ease-in-out;
    position: absolute;
-   left: 2000px;
+   left: -3000px;
+   right: 0;
    width: 0;
 
    @include breakpoint($screen-l-min) {

@@ -1,8 +1,9 @@
 import '@babel/polyfill';
 
-import scrollMonitor from 'scrollmonitor';
+
 
 /*
+import scrollMonitor from 'scrollmonitor';
 import backgroundNoise from './components/background-noise';
 import { init as initNavigation } from './components/navigation';
 import { init as initScrollTo } from './components/scroll-to';
