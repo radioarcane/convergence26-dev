@@ -37,9 +37,7 @@ var navContainer = document.querySelector('.masthead__nav');
 
 navToggleOpen.addEventListener('click', function(ev) {
    ev.preventDefault();
-   alert('click');
    navContainer.classList.add('masthead__nav--open');
-   alert('class added');
 });
 
 navToggleClose.addEventListener('click', function(ev) {
