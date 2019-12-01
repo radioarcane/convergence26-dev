@@ -1,4 +1,4 @@
-import '@babel/polyfill';
+//import '@babel/polyfill';
 
 
 
@@ -15,10 +15,10 @@ initScrollTo();
 initSubmissionForm();
 */
 
+/*
 const navToggleOpen = document.getElementById('nav-toggle-open');
 const navToggleClose = document.getElementById('nav-toggle-close');
 const navContainer = document.querySelector('.masthead__nav');
-
 
 navToggleOpen.addEventListener('click', ev => {
    ev.preventDefault();
@@ -26,6 +26,23 @@ navToggleOpen.addEventListener('click', ev => {
 });
 
 navToggleClose.addEventListener('click', ev => {
+   ev.preventDefault();
+   navContainer.classList.remove('masthead__nav--open');
+});
+*/
+
+var navToggleOpen = document.getElementById('nav-toggle-open');
+var navToggleClose = document.getElementById('nav-toggle-close');
+var navContainer = document.querySelector('.masthead__nav');
+
+navToggleOpen.addEventListener('click', function(ev) {
+   ev.preventDefault();
+   alert('click');
+   navContainer.classList.add('masthead__nav--open');
+   alert('class added');
+});
+
+navToggleClose.addEventListener('click', function(ev) {
    ev.preventDefault();
    navContainer.classList.remove('masthead__nav--open');
 });
