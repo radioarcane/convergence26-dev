@@ -1,7 +1,7 @@
-{% set mastheadClass = 'masthead' %}
+{% set mastheadClass = 'masthead masthead--sticky' %}
 
 {% if hasHero %}
-   {% set mastheadClass = 'masthead masthead--absolute' %}
+   {% set mastheadClass = 'masthead masthead--sticky masthead--absolute' %}
 {% endif %}
 
 <header class="{{ mastheadClass }}" role="banner">
