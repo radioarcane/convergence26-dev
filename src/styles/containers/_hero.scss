@@ -1,6 +1,5 @@
 .hero {
    position: relative;
-   height: 75vw;
    background-position: center center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -9,7 +8,13 @@
    z-index: 3;
 
    @include mediaBetween(0, $screen-l-min) {
+      background-image: url('/images/louisville-skyline-600x1200.png');
+      height: 100vw;
+   }
+
+   @include mediaBetween($screen-s-min, $screen-l-min) {
       background-image: url('/images/louisville-skyline-600x450-(4-3).png');
+      height: 75vw;
    }
 
    @include breakpoint($screen-l-min) {
