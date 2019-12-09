@@ -42,6 +42,7 @@ export function nunjucks(src = [], onComplete = f => f) {
 
       jsonData.path = filePath;
       jsonData.canonical = `${ jsonData.domain }/${ filePath }`.replace("//", "/");
+      jsonData.production = devMode === false;
 
       return jsonData;
    }))

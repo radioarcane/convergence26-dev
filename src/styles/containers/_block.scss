@@ -1,38 +1,14 @@
-/*
+
 .block {
-   padding: 2em $gutter-width;
-   border-bottom: 1px solid hex-to-rgba(lighten($white, 90), .75);
+   padding: $padding-vertical 0;
+
+   &--x2 {
+      padding: ($padding-vertical * 2) 0;
+   }
 
    &:after {
        content: "";
        display: table;
        clear: both;
    }
-
-   @include breakpoint($screen-l-min) {
-      padding-left: ($gutter-width * 2);
-      padding-right: ($gutter-width * 2);
-   }
-}
-*/
-
-.block {
-   padding: 2rem 0;
-
-   &:after {
-       content: "";
-       display: table;
-       clear: both;
-   }
-}
-
-
-.float-block-right {
-   float: right;
-   padding: 0 0 1.25rem 1.25rem;
-}
-
-.float-block-left {
-   float: left;
-   padding: 0 1.25rem 1.25rem 0;
 }

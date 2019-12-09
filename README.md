@@ -82,39 +82,3 @@ The `/src/js` folder is where you would place your javascript entriy file(s) and
 ___
 
 The `/tasks` folder contains the Gulp and Webpack scripts to compile your files stored in the `/src` folder.
-
-`index.js` is your main entry file that contains two primary functions: watch and build. Watch is your handler for when working locally in development mode. Build compiles your assets to production ready code.
-
-`css.js` - If you are transpiling your CSS code, then this file contains the default logic. Feel free to make adjustments based on your current needs for the project. It has PostCSS Presets set if you wish to use any of those, and you may need to adjust them if you plan on utilizing those features (https://preset-env.cssdb.org/features). Cssnano (https://cssnano.co/) is used by default as well. It then moves your file(s) into the `/public/assets/css` folder by default, which is easily edited bt adjusting this file. If in dev mode, it will produce sourcemaps to make debugging easier, it also ran through a beautifier to make your code more readable when in dev mode. If you want your production code to be non-minified, you can simply edit this part of the script....
-
-`css.js` - If you are transpiling your CSS code, then this file contains the default logic. Feel free to make adjustemnets based on your current needs for the project. It has PostCSS Presets set if you wish to use any of those, and you may need to adjust them if you plan on utilizing those features (https://preset-env.cssdb.org/features). Cssnano (https://cssnano.co/) is used by default as well. It then moves your file(s) into the `/public/assets/css` folder by default, which is easily edited bt adjusting this file. If in dev mode, it will produce sourcemaps to make debugging easier, it also ran through a beautifier to make your code more readable when in dev mode. If you want your production code to be non-minified, you can simply edit this part of the script....
-
-`nunjucks.js` - This compiles your nunjucks templates files into HTML files and moves them into your `/public` folder. It will scan for files in your `/src/html/_data/` folder, JSON parse them and then make this data available to your templates. It assumes the files are JSON formatted by default, if you want to write in say YML instead... you should edit the code to convert them to JSON here. The library `posthtml-obfuscate` (https://www.npmjs.com/package/posthtml-obfuscate) is also included that will scan your html and attempt to replace your mailto anchors with a basic email obfuscation. There are many other useful tools available that might be useful for your project. One nice one is https://www.npmjs.com/package/gulp-inline-source, which can easily inline your SVG icons.
-
-`sass.js` - Does basically the same thing as the `css.js` file, but compiles your sass files first.
-
-`server.js` - Localhost server when in dev mode.
-
-`siteMap.js` - Sitemap producer that gets executed when building your files for production. By default, it has some opinionated settings that might need to be altered. It attempts to load the file `/src/html/_data/data.json` and assumes that file contains an object with the property 'domain'. You might need to just simply hard-code it in this file if you are not using any json files. There is a filter function to filter out paths that you do not want present in the site map. If you need to customize things like priority, changefreq, etc. you can view the options at https://www.npmjs.com/package/gulp-sitemap.
-
-`webpack.js` - Webpack handler for compiling javascript files in your `/src/` folder. You will need to specify your entry js files here. It defaults to one entry file: `./js/main.js`.
-
-___
-
-Other files:
-
-`.babelrc` - Babel presets and plugin dependencies. Sometimes you will need to include others, such as if using React in your project: `@babel/preset-react` will need to be installed as a dev dependency and included. `babel-project-relative-import` is used so that in your javascript files you can import from the root, such as:
-
-`import Button from '~/components/GoogleMap.js'`;
-
-instead of having to do something like:
-
-`import Button from './../components/GoogleMap.js'`;
-
-`.editorconfig` - Specify editor rules such as indent space size and the likes to help keep consistency in the files... https://editorconfig.org. I would recommend installing a plugin for your editor @ https://editorconfig.org/#download.
-
-`.jshintrc` - Helps identify problems in your javascript files. https://jshint.com/docs. To be useful, it is helpful to have a jshint plguin setup in your code editor. Another, typically more opinionated / strict file you  may with to add is `eslintrc.json`. https://eslint.org/docs/user-guide/configuring. There are several standard rule sets already available on npm to start with, such as `eslint-config-airbnb` or `eslint-config-google`.
-
-`.gitignore` - Specify paths and files to keep out of git, such as the `node_modules` folder.
-
-`package.json` - This file is extremely important. Specifies your dev dependencies for your build process, dependencies your website/application depends on, build/dev script commands, and contains a browserslist property that gets used by webpack and gulp scripts to help identify the target browsers you wish to support in terms of adding polyfills and vendor prefixes to your compiled css and javascript files.

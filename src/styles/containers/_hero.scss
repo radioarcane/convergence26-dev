@@ -8,18 +8,39 @@
    z-index: 3;
 
    @include mediaBetween(0, $screen-l-min) {
-      background-image: url('/images/louisville-skyline-600x1200.png');
       height: 100vw;
+
+      .no-webp & {
+         background-image: url('/images/louisville-skyline-600x1200.jpg');
+      }
+
+      .webp & {
+         background-image: url('/images/louisville-skyline-600x1200.webp');
+      }
    }
 
    @include mediaBetween($screen-s-min, $screen-l-min) {
-      background-image: url('/images/louisville-skyline-600x450-(4-3).png');
       height: 75vw;
+
+      .no-webp & {
+         background-image: url('/images/louisville-skyline-600x450.jpg');
+      }
+
+      .webp & {
+         background-image: url('/images/louisville-skyline-600x450.webp');
+      }
    }
 
    @include breakpoint($screen-l-min) {
       height: 56.25vw;
-      background-image: url('/images/louisville-skyline-2000x1125.jpg');
+
+      .no-webp & {
+         background-image: url('/images/louisville-skyline-2000x1125.jpg');
+      }
+
+      .webp & {
+         background-image: url('/images/louisville-skyline-2000x1125.webp');
+      }
    }
 
    &__container {
@@ -50,9 +71,6 @@
    }
 
    @include breakpoint(600px) {
-      //top: 250px;
-      //transform: translateY(-50%);
-
       font-size: 22px;
       top: 45vw;
    }
@@ -141,9 +159,6 @@
 
    &__title {
       font-family: $font-smile;
-      /*
-      @include fluid-type($screen-s-min, $screen-xxl-min, 20px, 200px);
-      */
       font-size: 36px;
       margin: 0;
       padding-right: ($gutter-width/3);
@@ -216,11 +231,8 @@
    }
 
    &__info {
-      //@include fluid-type($screen-s-min, $screen-xxl-min, 16px, 42px);
-
       opacity: 0.9;
       position: relative;
-      //word-spacing: 1em;
       order: 1;
       white-space: nowrap;
       font-size: 0;
@@ -249,13 +261,11 @@
             color: #b80d1d;
             display: inline-block;
             margin: 0 0.5em;
-            //letter-spacing: normal;
          }
       }
    }
 
    &__slogan {
-      //@include fluid-type($screen-s-min, $screen-xxl-min, 30px, 75px);
       font-size: 28px;
       position: relative;
       word-spacing: 0.2em;
@@ -289,68 +299,4 @@
          word-spacing: normal
       }
    }
-
-   /*
-   text-shadow: 2px 2px hex-to-rgba($black, 0.4);
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: column;
-   text-align: center;
-
-   &__info {
-      @include fluid-type($screen-s-min, $screen-xxl-min, 24px, 42px);
-      letter-spacing: 0.125em;
-      opacity: 0.9;
-      position: relative;
-      word-spacing: 1em;
-      order: 1;
-
-      span:first-child {
-         &:after {
-            content: ".";
-            color: #b80d1d;
-            display: none;
-            margin: 0 0.5em;
-            letter-spacing: normal;
-         }
-      }
-   }
-
-   &__brand {
-      font-family: 'blacked_outregular';
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      line-height: 1;
-      padding: 2rem 0;
-      order: 2;
-   }
-
-   &__title {
-      font-family: 'blacked_outregular';
-      @include fluid-type($screen-s-min, $screen-xxl-min, 20px, 200px);
-      margin: 0;
-      padding-right: 15px;
-
-      span {
-         display: none;
-      }
-   }
-
-   &__slogan {
-      @include fluid-type($screen-s-min, $screen-xxl-min, 30px, 75px);
-      position: relative;
-      word-spacing: 0.2em;
-      order: 3;
-
-      &:after {
-         content: ".";
-         color: #b80d1d;
-         display: inline-block;
-         margin-left: -0.4em;
-         opacity: 0.75;
-         word-spacing: normal
-      }
-   }
-   */
 }

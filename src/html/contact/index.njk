@@ -9,7 +9,7 @@
 
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec sagittis orci. In eget metus sit amet ex elementum accumsan. Quisque eget libero sollicitudin, sollicitudin dui vitae, imperdiet metus. Proin malesuada sapien convallis auctor posuere. Donec arcu ipsum, porta a molestie quis, varius sed dui. Nunc eros libero, lacinia et facilisis at, dapibus non metus. Proin at mauris feugiat, auctor augue id, porta lorem. Ut id semper est.</p>
 
-         <form id="contact-form" name="contact" method="POST" data-netlify="true">
+         <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="info">
             <noscript>
                <p><strong>Sorry, but JavaScript is required to properly submit this form</strong></p>
             </noscript>
@@ -18,7 +18,7 @@
             <input type="hidden" name="subject" value="Convergence 26 Contact Form Submission" readonly />
 
             <fieldset>
-               <div class="grid">
+               <div class="grid grid--collapse">
                   <div class="grid__item xs-12 md-6">
                      <label for="name">
                         <span class="required-label">Name:</span>
@@ -32,6 +32,10 @@
                      </label>
                   </div>
                   <div class="grid__item xs-12">
+                     <div style="display:none;" aria-hidden="true">
+                        <input type="text" name="info" aria-label="Please ignore this field.">
+                     </div>
+
                      <label for="message">
                         <span class="required-label">Message:</span>
                         <textarea id="message" name="message" aria-label="Message" required></textarea>

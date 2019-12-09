@@ -66,8 +66,8 @@ select {
 }
 
 fieldset {
-   padding: 2rem 0;
-   margin: 0 0 1.5rem;
+   padding: ($padding-vertical * 2) $padding-horizontal;
+   margin: 0 0 ($padding-vertical * 2);
 }
 
 .required-label {

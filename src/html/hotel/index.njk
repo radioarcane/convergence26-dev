@@ -1,6 +1,44 @@
 {% set pageTitle = 'The Hotel | Convergence 26 - Louisville, KY' %}
 
+{% import '_macros/image.njk' as img %}
+
 {% extends '_layouts/default.njk' %}
+
+{% set westTowerRooms = [{
+   img: "west-tower-living-room",
+   alt: "Galt House: West Tower Living Room",
+   caption: "Living Room"
+}, {
+   img: "west-tower-bedroom-1",
+   alt: "Galt House: West Tower Bedroom",
+   caption: "Bedroom"
+}, {
+   img: "west-tower-bedroom-2",
+   alt: "Galt House: West Tower Bedroom",
+   caption: "Bedroom"
+}, {
+   img: "west-tower-bathroom-1",
+   alt: "Galt House: West Tower Bathroom",
+   caption: "Bathroom"
+}, {
+   img: "west-tower-bathroom-2",
+   alt: "Galt House: West Tower Bathroom",
+   caption: "Bathroom"
+}] %}
+
+{% set eastTowerRooms = [{
+   img: "east-tower-parlor",
+   alt: "Galt House: East Tower Suite Parlor",
+   caption: "Parlor"
+}, {
+   img: "east-tower-bedroom",
+   alt: "Galt House: East Tower Bedroom",
+   caption: "Bedroom"
+}, {
+   img: "east-tower-bathroom",
+   alt: "Galt House: East Tower Bathroom",
+   caption: "Bathroom"
+}] %}
 
 {% block main %}
    <article class="container">
@@ -22,36 +60,20 @@
          <h3 class="title">Galt House: West Tower Deluxe Rooms</h3>
 
          <div class="grid grid--collapse text-center">
-            <div class="grid__item xs-12 md-6 lg-4">
-               <figure>
-                  <img src="/images/hotel/1WestTower-livingroom.jpg" alt="West Tower Living Room">
-                  <figcaption>Living Room</figcaption>
-               </figure>
-            </div>
-            <div class="grid__item xs-12 md-6 lg-4">
-               <figure>
-                  <img src="/images/hotel/1WestTower-abedroom.jpg" alt="West Tower Bedroom">
-                  <figcaption>Bedroom</figcaption>
-               </figure>
-            </div>
-            <div class="grid__item xs-12 md-6 lg-4">
-               <figure>
-                  <img src="/images/hotel/1WestTower-bedroom2.jpg" alt="West Tower Bedroom">
-                  <figcaption>Bedroom</figcaption>
-               </figure>
-            </div>
-            <div class="grid__item xs-12 md-6 lg-4">
-               <figure>
-                  <img src="/images/hotel/1WestTower-bathroom.jpg" alt="West Tower Bathroom">
-                  <figcaption>Bathroom</figcaption>
-               </figure>
-            </div>
-            <div class="grid__item xs-12 md-6 lg-4">
-               <figure>
-                  <img src="/images/hotel/1WestTower-bathroom2.jpg" alt="West Tower Bathroom">
-                  <figcaption>Bathroom</figcaption>
-               </figure>
-            </div>
+            {% for item in westTowerRooms %}
+               <div class="grid__item xs-12 sm-6 md-6 lg-4">
+                  <figure>
+                     {{ img.lazyPic(
+                           jpg="/images/hotel/" + item.img + ".jpg",
+                           webp="/images/hotel/" + item.img + ".webp",
+                           alt=item.alt
+                        )
+                     }}
+
+                     <figcaption>{{ item.caption }}</figcaption>
+                  </figure>
+               </div>
+            {% endfor %}
          </div>
       </section>
 
@@ -59,24 +81,20 @@
          <h3 class="title">Galt House: East Tower Executive Suites</h3>
 
          <div class="grid grid--collapse text-center">
-            <div class="grid__item xs-12 md-6 lg-4">
-               <figure>
-                  <img src="/images/hotel/EastTowerSuite-parlor.jpg" alt="East Tower Suite Parlor">
-                  <figcaption>Parlor</figcaption>
-               </figure>
-            </div>
-            <div class="grid__item xs-12 md-6 lg-4">
-               <figure>
-                  <img src="/images/hotel/EastTowerSuite-bedroom.jpg" alt="East Tower Bedroom">
-                  <figcaption>Bedroom</figcaption>
-               </figure>
-            </div>
-            <div class="grid__item xs-12 md-6 lg-4">
-               <figure>
-                  <img src="/images/hotel/EastTowerSuite-zbathroom.jpg" alt="East Tower Bathroom">
-                  <figcaption>Bathroom</figcaption>
-               </figure>
-            </div>
+            {% for item in eastTowerRooms %}
+               <div class="grid__item xs-12 sm-6 md-6 lg-4">
+                  <figure>
+                     {{ img.lazyPic(
+                           jpg="/images/hotel/" + item.img + ".jpg",
+                           webp="/images/hotel/" + item.img + ".webp",
+                           alt=item.alt
+                        )
+                     }}
+
+                     <figcaption>{{ item.caption }}</figcaption>
+                  </figure>
+               </div>
+            {% endfor %}
          </div>
       </section>
    </article>

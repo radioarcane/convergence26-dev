@@ -1,14 +1,14 @@
-{% set mastheadClass = 'masthead masthead--sticky' %}
+{% import '_macros/image.njk' as img %}
 
-{% if hasHero %}
-   {% set mastheadClass = 'masthead masthead--sticky' %}
-{% endif %}
-
-<header class="{{ mastheadClass }}" role="banner">
+<header class="masthead masthead--sticky" role="banner">
    <div class="masthead__nav">
       <div class="masthead__nav__top">
          <a href="/" class="masthead__logo">
-            <img src="/images/logo-300x300.png" alt="Convergence 26 - Louisville, KY">
+            {{ img.picture(
+               png="/images/convergence-26-logo.png",
+               webp="/images/convergence-26-logo.webp",
+               alt="Convergence 26 - Louisville, Kentucky"
+            )}}
          </a>
 
          <button id="nav-toggle-open" class="masthead__hamburger" title="Menu" aria-label="Open Navigation Menu" href="#navigation">

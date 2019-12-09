@@ -127,11 +127,15 @@ function watch() {
       jsWatcher.on('unlink', jsHandler);
 
       imgWatcher.on('add', (path, stats) => {
-         gulpWebpDev([path.replace('src\\images', '')]);
+         //console.log(path);
+         //console.log(path.replace('src\\images', ''));
+         gulpWebpDev([path]);
+         //gulpWebpDev([path.replace('src\\images', '')]);
       });
 
       imgWatcher.on('change', (path, stats) => {
-          gulpWebpDev([path.replace('src\\images', '')]);
+          //gulpWebpDev([path.replace('src\\images', '')]);
+          gulpWebpDev([path]);
       });
    });
 

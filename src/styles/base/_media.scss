@@ -9,10 +9,11 @@ img {
 
 figure {
    padding: 0;
-   margin: 0 0 1rem;
+   margin: 0 0 $padding-vertical;
 }
 
 figcaption {
+   margin-top: $padding-vertical / 2;
 }
 
 iframe {

@@ -18,27 +18,22 @@
 @import "base/lists";
 @import "base/forms";
 
-@import "layouts/grid";
-
-
-
-
 @import "containers/block";
 @import "containers/container";
+@import "containers/grid";
 @import "containers/hero";
 @import "containers/main";
 @import "containers/masthead";
 @import "containers/navigation";
 @import "containers/footer";
 
-@import "components/background-noise";
 @import "components/bio";
 @import "components/button";
 @import "components/icon";
 @import "components/title";
 
+@import "util/space";
 @import "util/text";
-
 
 
 
@@ -82,105 +77,7 @@
       opacity: 0.75;
       font-size: 75%;
    }
-
-   /*
-   &__date {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: 1;
-      background: lighten($black, 5);
-      width: 55px;
-      height: 55px;
-      padding: 12.5px 0;
-      border-radius: 100%;
-      color: $white-smoke;
-      font-weight: 700;
-      text-align: center;
-   }
-   */
 }
-
-
-#quote {
-   blockquote {
-      text-align: center;
-      font-size: 110%;
-      max-width: 1250px;
-      margin-left: auto;
-      margin-right: auto;
-
-      q {
-         font-style: italic;
-      }
-
-      footer {
-         text-align: right;
-      }
-   }
-}
-
-#venue {
-   li {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-   }
-
-   p:first-of-type {
-      @include breakpoint($screen-l-min) {
-         max-width: calc(100% - 600px);
-         float: left;
-      }
-
-      + p {
-         @include breakpoint($screen-l-min) {
-            float: left;
-         }
-      }
-   }
-
-   p {
-
-   }
-}
-
-#venue-layout {
-   @include breakpoint($screen-l-min) {
-      float: right;
-      padding: 0 0 1.25rem 1.25rem;
-      max-width: 600px;
-   }
-}
-
-#venue-building {
-   text-align: center;
-   padding: 1.5rem 0;
-   clear: both;
-}
-
-#louisville,
-#travel,
-#attractions,
-#about {
-   background: lighten($black, 15);
-}
-
-#venue,
-#accommodations,
-#food {
-   background: lighten($black, 18);
-}
-
-
-
-
-
-
-
-
-
-
 
 
 .attractions-container {
@@ -194,7 +91,6 @@
       flex-wrap: nowrap;
    }
 }
-
 
 .attractions--1 {
    margin-bottom: 0;
