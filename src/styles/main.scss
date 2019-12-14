@@ -40,6 +40,12 @@
 @import "util/text";
 
 
+.no-js {
+   .lazy[data-src] {
+      display: none;
+   }
+}
+
 
 .card {
    border: 1px solid hex-to-rgba($white-smoke, 0.4);
