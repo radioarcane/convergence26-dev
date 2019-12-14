@@ -4,47 +4,53 @@
 
 {% extends '_layouts/default.njk' %}
 
+{% set venuePics = [{
+   img: "scary-black-art-sanctuary",
+   alt: "Scary Black performing at Art Sanctuary"
+}, {
+   img: "radio-arcane-at-art-sanctuary",
+   alt: "Radio Arcane Goth Night at Art Sanctuary"
+}, {
+   img: "vyva-melinkolya-art-sanctuary",
+   alt: "Vyva Melinkolya performing at Art Sanctuary"
+}, {
+   img: "art-sanctuary-gallery",
+   alt: "Gallery Space at Art Sanctuary"
+}, {
+   img: "art-sanctuary-building",
+   alt: "Art Sanctuary Building (Outside View)"
+}, {
+   img: "art-sanctuary-layout",
+   alt: "Art Sanctuary Building Layout"
+}] %}
+
+
 {% block main %}
    <article class="container">
       <div class="block">
          <h1 class="title">The Venue</h1>
 
-         <figure class="text-center pb-1">
-            {{ img.lazyPic(
-               jpg="/images/venue/art-sanctuary-building.jpg",
-               webp="/images/venue/art-sanctuary-building.webp",
-               alt="Art Sanctuary Building"
-            )}}
-         </figure>
+         <p>
+            Louisville’s Goth scene is fortunate enough to have a physical home of its own—<a href=" http://www.art-sanctuary.org" target="_blank">Art Sanctuary</a>, which is named for its community-oriented arts collective that was founded to support local visual, literary, and performing arts. It’s a massive, 26,000 sq. ft. structure, roughly half of which is dedicated to a capacious, high-ceilinged event facility with an expansive stage and full bar, and in a separate, somewhat quieter room, an art gallery with ample seating for those who’d prefer to relax and enjoy conversation.
+         </p>
 
-         <p class="pb-1">Art Sanctuary is also the eponym for a 26,000 sq. ft. physical structure, roughly half of which is dedicated to an event facility (9500 sq. ft.; occupancy: 597) and gallery space (3200 sq. ft.; occupancy: 98), all of which incorporates such features as a large, fully equipped stage, full bar, lobby area, comfortable seating, and single-story accessibility.</p>
+         <p class="pb-1">Incidentally, in its capacity as a bar, Art Sanctuary is licensed as an 18+, 4am venue. Post-concert dancing will continue until you’re on the verge of collapse, in accordance with our local custom.</p>
 
-         <figure class="text-center pb-1">
-            <a href="http://www.art-sanctuary.org/building-information" target="_blank">
-               {{ img.lazyPic(
-                  jpg="/images/venue/art-sanctuary-layout.jpg",
-                  webp="/images/venue/art-sanctuary-layout.webp",
-                  alt="Art Sanctuary Building Layout"
-               )}}
-            </a>
-         </figure>
-
-         <p>Within Art Sanctuary (which is licensed as an 18+, 4am venue), our evening Convergence events can feature what everyone has come to expect—bands, DJs, fashion show, etc.–but, concurrently, it can also accommodate an art show and a wide array of vendors in fully separate spaces, thus making all of this much more convenient for attendees while also curbing expenses. That physical separation also makes the gallery area a somewhat quieter space, with seating for those who’d prefer to relax and enjoy conversation.</p>
-
-         <ul>
-            <li>
-               <a href="http://www.art-sanctuary.org/building-information" target="_blank">
-                  Building Information
-               </a>
-            </li>
-            <li>
-               <a href="http://www.art-sanctuary.org/event-space-rental" target="_blank">
-                  Event Space Rental
-               </a>
-            </li>
-         </ul>
-
-         <p>Further, the facility will also be made available during the day, and thus could potentially host community-led workshops of various types. We fully welcome volunteers who’d like to lead such activities, and invite you to contact us with your feedback on what you’d like to see and what you have to offer.</p>
+         <div class="grid grid--collapse grid--center-items text-center">
+            {% for item in venuePics %}
+               <div class="grid__item xs-12 sm-6 pb-1">
+                  <figure>
+                     {{ img.lazyPic(
+                           jpg="/images/venue/" + item.img + ".jpg",
+                           webp="/images/venue/" + item.img + ".webp",
+                           alt=item.alt,
+                           className="border border--light"
+                        )
+                     }}
+                  </figure>
+               </div>
+            {% endfor %}
+         </div>
       </div>
    </article>
 {% endblock %}

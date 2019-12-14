@@ -5,10 +5,6 @@
 {% extends '_layouts/default.njk' %}
 
 {% set westTowerRooms = [{
-   img: "west-tower-living-room",
-   alt: "Galt House: West Tower Living Room",
-   caption: "Living Room"
-}, {
    img: "west-tower-bedroom-1",
    alt: "Galt House: West Tower Bedroom",
    caption: "Bedroom"
@@ -40,10 +36,30 @@
    caption: "Bathroom"
 }] %}
 
+{% set conservatory = [{
+   img: "galt-house-the-conservatory",
+   alt: "Galt House Conservatory (Outside View)"
+}, {
+   img: "galt-house-conservatory",
+   alt: "Galt House Conservatory (Inside View)"
+}] %}
+
 {% block main %}
    <article class="container">
       <section class="block">
          <h1 class="title">The Hotel</h1>
+
+         <div class="pb-1">
+            <figure>
+               {{ img.lazyPic(
+                     jpg="/images/hotel/galt-house-hotel-suites.jpg",
+                     webp="/images/hotel/galt-house-hotel-suites.webp",
+                     alt="Galt House Hotel & Suites",
+                     className="border border--light"
+                  )
+               }}
+            </figure>
+         </div>
 
          <p>The official hotel for Convergence 26 is the gorgeous, spacious, well-appointed, river-adjacent <a href="https://book.passkey.com/go/Convergence26" target="_blank">Galt House</a>.</p>
 
@@ -51,22 +67,27 @@
 
          <p>A waterfront suite version of the West Tower room is also available for $209.</p>
 
-         <p>The block ranges from Friday to Monday, but for those who’d prefer to spend more time with us, we’ve also arranged for these discounted rates to be honored for guests within our block for the three days pre and post. Feel free to check in as early as Tuesday, if that’s your pleasure. If the room type on the date range you’re seeking does not appear on Passkey (if for example, you’d like to check in early and leave late), please <a href="/contact">contact us</a> so that we can have that immediately added. Not all available rooms are readily blocked for dates outside of the officially-official Convergence event dates, and while we’ll be keeping an eye on the room block status in the effort to preempt things temporarily getting filled, please feel free to <a href="/contact">reach out to us</a> right away if you encounter any difficulties.</p>
+         <p class="pb-1">The block ranges from Friday to Monday, but for those who’d prefer to spend more time with us, we’ve also arranged for these discounted rates to be honored for guests within our block for the three days pre and post. Feel free to check in as early as Tuesday, if that’s your pleasure. If the room type on the date range you’re seeking does not appear on Passkey (if for example, you’d like to check in early and leave late), please <a href="/contact">contact us</a> so that we can have that immediately added. Not all available rooms are readily blocked for dates outside of the officially-official Convergence event dates, and while we’ll be keeping an eye on the room block status in the effort to preempt things temporarily getting filled, please feel free to <a href="/contact">reach out to us</a> right away if you encounter any difficulties. <a href="https://book.passkey.com/go/Convergence26" target="_blank">https://book.passkey.com/go/Convergence26</a></p>
 
-         <p><a href="https://book.passkey.com/go/Convergence26" target="_blank">https://book.passkey.com/go/Convergence26</a></p>
+         <div class="text-center">
+            <a class="btn" href="https://book.passkey.com/go/Convergence26" target="_blank">
+               Book A Room for Convergence 26
+            </a>
+         </div>
       </section>
 
       <section class="block">
          <h3 class="title">Galt House: West Tower Deluxe Rooms</h3>
 
-         <div class="grid grid--collapse text-center">
+         <div class="grid grid--collapse grid--center-items text-center">
             {% for item in westTowerRooms %}
-               <div class="grid__item xs-12 sm-6 md-6 lg-4">
+               <div class="grid__item xs-12 sm-6">
                   <figure>
                      {{ img.lazyPic(
                            jpg="/images/hotel/" + item.img + ".jpg",
                            webp="/images/hotel/" + item.img + ".webp",
-                           alt=item.alt
+                           alt=item.alt,
+                           className="border border--light"
                         )
                      }}
 
@@ -80,18 +101,61 @@
       <section class="block">
          <h3 class="title">Galt House: East Tower Executive Suites</h3>
 
-         <div class="grid grid--collapse text-center">
+         <div class="grid grid--collapse grid--center-items text-center">
             {% for item in eastTowerRooms %}
-               <div class="grid__item xs-12 sm-6 md-6 lg-4">
+               <div class="grid__item xs-12 sm-6">
                   <figure>
                      {{ img.lazyPic(
                            jpg="/images/hotel/" + item.img + ".jpg",
                            webp="/images/hotel/" + item.img + ".webp",
-                           alt=item.alt
+                           alt=item.alt,
+                           className="border border--light"
                         )
                      }}
 
                      <figcaption>{{ item.caption }}</figcaption>
+                  </figure>
+               </div>
+            {% endfor %}
+         </div>
+      </section>
+
+      <section>
+         <h3 class="title">Galt House: Waterfront Suite</h3>
+
+         <div class="grid grid--collapse grid--center-items text-center">
+            <div class="grid__item xs-12 sm-6">
+               <figure>
+                  {{ img.lazyPic(
+                        jpg="/images/hotel/waterfront-suite-living-room.jpg",
+                        webp="/images/hotel/waterfront-suite-living-room.webp",
+                        alt="Galt House Waterfront Suite Living Room",
+                        className="border border--light"
+                     )
+                  }}
+
+                  <figcaption>
+                     Waterfront Suite Living Room
+                  </figcaption>
+               </figure>
+            </div>
+         </div>
+      </section>
+
+      <section class="block pb-2">
+         <h3 class="title">Galt House: Conservatory</h3>
+
+         <div class="grid grid--collapse grid--center-items text-center">
+            {% for item in conservatory %}
+               <div class="grid__item xs-12 sm-6">
+                  <figure>
+                     {{ img.lazyPic(
+                           jpg="/images/hotel/" + item.img + ".jpg",
+                           webp="/images/hotel/" + item.img + ".webp",
+                           alt=item.alt,
+                           className="border border--light"
+                        )
+                     }}
                   </figure>
                </div>
             {% endfor %}

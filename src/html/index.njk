@@ -10,52 +10,68 @@
 {% block main %}
    <div class="container">
       <article class="block">
-         <p>Nestled in the dead center of the states that comprise the US’s Midwest, East, and South sits Kentucky, and the best features of each of these regions are well-represented in Louisville. Its burgeoning art, music, theater, and culinary cultures, combined with its rich history and natural splendor, themselves, have much to offer, and, oh… we have a Goth scene, too.</p>
+         <p class="drop-cap">Nestled in the dead center of the states that comprise the US’s Midwest, East, and South sits Kentucky, and the best features of each of these regions are well-represented in Louisville. Its burgeoning art, music, theater, and culinary cultures, combined with its rich history and natural splendor, themselves, have much to offer, and, oh… we have a Goth scene, too.</p>
 
          <p>These Victorian-era garden cemeteries aren’t just going to appreciate themselves, after all.</p>
 
-         <p>Radio Arcane, Art Sanctuary, and really, all of Louisville are delighted that our fair city has been chosen for Convergence 26. We have much to share with you.</p>
+         <p><a href="https://www.radio-arcane.com" target="_blank">Radio Arcane</a>, <a href="http://www.art-sanctuary.org">Art Sanctuary</a>, and really, all of Louisville are delighted that our fair city has been chosen for Convergence 26. We have much to share with you.</p>
       </article>
 
-      <article class="block">
+      <section id="news" class="block">
          <h2 class="title">News & Annoucements</h2>
 
-         <div class="card card--news">
-            <div class="card__body">
-               <h5 class="card__title">Matt started the website</h5>
-               <time class="card__date" datetime="2019-11-01">Nov. 1, 2019</time>
+         <div class="pb-2">
+            <article class="card card--news">
+               <div class="card__body">
+                  <h5 class="card__title">Submissions for Bands and DJs Closed</h5>
+                  <time class="card__date" datetime="2019-11-10">Nov. 10, 2019</time>
 
-               <div class="card__text">
-                  <p>n eu arcu vestibulum, fringilla enim a, dapibus nulla. Mauris suscipit orci nec risus euismod, quis fringilla tellus viverra.</p>
+                  <div class="card__text">
+                     <p>We’ve been almost overwhelmed by the sheer volume of great bands and DJs who’ve formally expressed their interest in performing at next year’s Convergence, and now it’s time to announce that we are no longer accepting submissions.</p>
+                  </div>
                </div>
-            </div>
+            </article>
+
+            <article class="card card--news">
+               <div class="card__body">
+                  <h5 class="card__title">Cat vs Bat Podcast</h5>
+                  <time class="card__date" datetime="2019-10-30">Oct. 30, 2019</time>
+
+                  <div class="card__text">
+                     <p>Committee members Tarik Dozier, Lisa Frye, and Edwin Alberto have made an appearance on the <a href="https://www.facebook.com/catvsbatpodcast" target="_blank">Cat vs Bat Podcast</a>, on which they discuss the delights of Louisville, Radio Arcane, and what we have in store for C26 with DJ Mistress McCutchan. <a href="https://catvsbat.podbean.com/e/episode-40-the-louisville-scene-convergence-26" target="_blank">Give it a listen</a>.</p>
+                  </div>
+               </div>
+            </article>
+
+            <article class="card card--news">
+               <div class="card__body">
+                  <h5 class="card__title">Official Hotel Annoucement</h5>
+                  <time class="card__date" datetime="2019-09-15">Sept. 15, 2019</time>
+
+                  <div class="card__text">
+                     <p>We’re pleased to announce the official hotel for 2020—the gorgeous, spacious, well-appointed, river-adjacent <a href="https://www.facebook.com/TheGaltHouseHotel" target="_blank">Galt House Hotel</a>. For details and booking information, visit our <a href="/hotel">Hotel page</a>.</p>
+                  </div>
+               </div>
+            </article>
          </div>
 
-         <div class="card card--news">
-            <div class="card__body">
-               <h5 class="card__title">Matt started the website</h5>
-               <time class="card__date" datetime="2019-11-01">Nov. 1, 2019</time>
+         <aside>
+            <h6 class="text-center">
+               Follow Convergence 26 on Social Media to keep up on the latest news and announcements
+            </h6>
 
+            {% include "_partials/social-icons.njk" %}
+         </aside>
+      </section>
 
-               <div class="card__text">
-                  <p>n eu arcu vestibulum, fringilla enim a, dapibus nulla. Mauris suscipit orci nec risus euismod, quis fringilla tellus viverra.</p>
-               </div>
-            </div>
-         </div>
-      </article>
-
-      <article class="block">
-         <h3 class="title">Social Media Block..</h3>
-
-         <p>Social Media Icons with please follow message to keep up on news...</p>
-      </article>
-
-      <article class="block">
+      <article id="convergence" class="block">
          <h3 class="title">What is Convergence?</h3>
 
-         <p>Etiam accumsan nisl non risus posuere mollis. Suspendisse non risus ac purus posuere bibendum quis sed ex. Vestibulum vel ligula ex. Donec dictum leo vitae libero porttitor, a tincidunt diam semper. In a lectus turpis. Sed ultrices tortor quis diam sodales lacinia. Fusce bibendum finibus elit, eget ullamcorper tellus venenatis vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin lobortis massa mauris, iaculis ullamcorper nisi dapibus nec. Vivamus eleifend semper lectus, convallis lobortis lectus elementum rutrum. In rutrum id eros a scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed blandit nulla quis velit semper, sed viverra elit tristique. Etiam purus nisl, tristique quis malesuada ac, rhoncus eu diam.</p>
+         <p>In 1994, the geographically disparate denizens of the Usenet group, <a href="https://www.facebook.com/groups/alt.gothic" target="_blank">alt.gothic</a>, decided that at long last, it was time to meet IRL. Collectively, they decided that Chicago was just the right place, and lo, the first Convergence was born.</p>
 
-         <p>Vivamus luctus enim quis mi posuere pulvinar. Donec eu laoreet diam, a imperdiet nibh. Phasellus tincidunt tincidunt nibh a volutpat. Fusce et mi sit amet tortor tempor condimentum. In tristique dui sit amet congue varius. Quisque placerat massa suscipit iaculis maximus. Etiam id aliquam lacus, in convallis dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla fermentum mollis bibendum. Sed laoreet convallis consequat. Sed molestie malesuada sapien, vitae tincidunt nulla lobortis vitae. Mauris bibendum nibh vitae lacus scelerisque, non viverra ex tincidunt. In interdum elementum dignissim. Mauris id lobortis risus, id rutrum augue.</p>
+         <p>In the twenty-five years since, it has become an annual party—a family reunion of sorts—and has grown to include members of the myriad Gothic/Industrial online and social media groups it spawned, as well as the broader worldwide Goth community—“friends of friends,” as it were. Hundreds of net.goths from around the globe descend upon a single city for a weekend of socializing, musical events, and various forms of indulgence.</p>
+
+         <p>Now in its twenty-sixth year, Louisville, Kentucky’s winning bid means that we get to bring you something altogether new, and yet still, entirely familiar.</p>
       </article>
    </div>
 {% endblock %}

@@ -10,6 +10,10 @@
        justify-content: center
     }
 
+    &--center-items {
+      align-items: center;
+   }
+
     &--collapse {
        margin-left: $gutter-width * -1;
        margin-right: $gutter-width * -1;

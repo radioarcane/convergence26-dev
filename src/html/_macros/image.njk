@@ -1,5 +1,5 @@
 {% macro picture(jpg=false, webp=false, png=false, alt='', className=false) %}
-   {% set classCode = 'class=' + className %}
+   {% set classCode =' class="' + className + '"' if className %}
 
    <picture>
       {% if webp %}
@@ -14,12 +14,16 @@
          <source srcset="{{ png }}" type="image/png">
       {% endif %}
 
-      <img src="{{ png if png else jpg }}" alt="{{ alt }}" {{ classCode if className |safe }}>
+      <img src="{{ png if png else jpg }}" alt="{{ alt }}"{{ classCode if className |safe }}>
    </picture>
 {% endmacro %}
 
-{% macro lazyPic(jpg=false, webp=false, png=false, alt='') %}
-   {% set classCode = 'class=' + className %}
+{% macro lazyPic(jpg=false, webp=false, png=false, alt='', className='') %}
+   {% set classes = 'lazy' %}
+
+   {% if className %}
+      {% set classes = classes + ' ' + className %}
+   {% endif %}
 
    <picture>
       {% if webp %}
@@ -34,10 +38,10 @@
          <source data-srcset="{{ png }}" type="image/png">
       {% endif %}
 
-      <img class="lazy" data-src="{{ png if png else jpg }}" alt="{{ alt }}">
+      <img class="{{ classes }}" data-src="{{ png if png else jpg }}" alt="{{ alt }}">
 
       <noscript>
-         <img src="{{ png if png else jpg }}" alt="{{ alt }}">
+         <img class="{{ classes }}" src="{{ png if png else jpg }}" alt="{{ alt }}">
       </noscript>
    </picture>
 {% endmacro %}
