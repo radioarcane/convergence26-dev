@@ -1,0 +1,63 @@
+backend:
+  name: github
+  branch: master
+  repo: radioarcane/convergence26-dev
+
+media_folder: "/src/images"
+public_folder: "/images"
+
+site_url: https://www.convergence26.com
+display_url: https://www.convergence26.com
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "annoucements"
+    label: "Annoucements"
+    label_singular: "Annoucement"
+    folder: "_posts/annoucements"
+    create: true
+    slug: "{{fields.date}}-{{title}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD"}
+      - {label: "Body", name: "body", widget: "markdown", default: ""}
+  - name: "sections"
+    label: "Content Sections"
+    label_singular: "Content Section"
+    folder: "_posts/sections"
+    create: true
+    slug: "{{fields.page}}-{{field.key}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Page"
+        name: "page"
+        widget: "select"
+        options:
+          - { label: "Home", value: "home"}
+          - { label: "Committee", value: "committee"}
+          - { label: "Contact", value: "contact"}
+          - { label: "Hotel", value: "hotel"}
+          - { label: "Louisville", value: "louisville"}
+          - { label: "Venue", value: "venue"}
+      - {label: "Key", name: "key", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown", default: ""}
+  - name: "pages"
+    label: "Page Content"
+    label_singular: "Page Content"
+    folder: "_posts/pages"
+    create: true
+    slug: "{{field.key}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Key", name: "key", widget: "string"}
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        default: []
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "ID", name: "id", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown", default: ""}
